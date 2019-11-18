@@ -1,0 +1,289 @@
+{
+  "rooms": [
+    {
+      "id": 0,
+      "token": "ABCDEF",
+      "title": "Kitokie pasikalbėjimai",
+      "status": "Ongoing",
+      "type": "Private",
+      "time": 1571067063,
+      "isCurated": true,
+      "isLocked": true,
+      "questions": [
+        {
+          "id": 0,
+          "time": 1571417810658,
+          "author": "Anonimas",
+          "question": "Ką tu, ką vakare?",
+          "rating": 20,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": true
+        },
+        {
+          "id": 1,
+          "time": 1570417910658,
+          "author": "Petras",
+          "question": "Į kokią mokyklą ėjote?",
+          "rating": 1,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 2,
+          "time": 1571067100,
+          "author": "Antanas",
+          "question": "Ar lapai krenta, nes į juos vėjas papučia?",
+          "rating": 35,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": true,
+          "isLiked": false
+        },
+        {
+          "id": 3,
+          "time": 1571067000,
+          "author": "Anonimas",
+          "question": "Ar tau buvo kada nukritęs mašinos ratas? Nes man tai buvo.",
+          "rating": 0,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": true,
+          "isLiked": false
+        },
+        {
+          "id": 4,
+          "time": 1571427910658,
+          "author": "Jonce",
+          "question": "Ar tau buvo kada nukritęs mašinos ratas? Nes man tai buvo.",
+          "rating": 5,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": true,
+          "isLiked": false
+        },
+        {
+          "id": 5,
+          "time": 1571417810658,
+          "author": "Anonimas",
+          "question": "Ką tu, ką vakare?asssssssssssssssssssssssssssssssssssssssssssss ssssssssssssssssssssssssssssss ssssssssssssssssssssssssss",
+          "rating": 20,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": true,
+          "isLiked": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "token": "000000",
+      "title": "Testas",
+      "status": "Completed",
+      "type": "Public",
+      "time": 1571069063,
+      "isCurated": false,
+      "isLocked": false,
+      "questions": [
+        {
+          "id": 0,
+          "time": 1572260247818,
+          "author": "Anonimas",
+          "question": "Kas žmogui teikia ramybę?",
+          "rating": 24,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": true
+        },
+        {
+          "id": 1,
+          "time": 1571067963,
+          "author": "NEC",
+          "question": "Kodėl žmogui svarbi jo kilmė?",
+          "rating": 12,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": true
+        },
+        {
+          "id": 2,
+          "time": 1571067900,
+          "author": "Antanas",
+          "question": "Požiūris į visuomenės paribio žmogų lietuvių literatūroje",
+          "rating": 350,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 3,
+          "time": 1571067999,
+          "author": "Anonimas",
+          "question": "Vilnius lietuvių literatūroje",
+          "rating": 1,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 4,
+          "time": 1571064063,
+          "author": "Anonimas",
+          "question": "Ką gali pakeisti vienas žmogus?",
+          "rating": 24,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 5,
+          "time": 1571067963,
+          "author": "NEC",
+          "question": "Svarbiau mylėti ar būti mylimam?",
+          "rating": 12,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 6,
+          "time": 1571067900,
+          "author": "Antanas",
+          "question": "Gyvybės vertė literatūroje",
+          "rating": 350,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": true
+        },
+        {
+          "id": 7,
+          "time": 1571067999,
+          "author": "Anonimas",
+          "question": "Susvetimėjimo problema literatūroje",
+          "rating": 1,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "token": "000000",
+      "title": "",
+      "status": "",
+      "type": "Public",
+      "time": 0,
+      "isCurated": false,
+      "isLocked": false,
+      "questions": [
+        {
+          "id": 0,
+          "time": 1572260247818,
+          "author": "Anonimas",
+          "question": "Kas žmogui teikia ramybę?",
+          "rating": 24,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": true
+        },
+        {
+          "id": 1,
+          "time": 1571067963,
+          "author": "NEC",
+          "question": "Kodėl žmogui svarbi jo kilmė?",
+          "rating": 12,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": true
+        },
+        {
+          "id": 2,
+          "time": 1571067900,
+          "author": "Antanas",
+          "question": "Požiūris į visuomenės paribio žmogų lietuvių literatūroje",
+          "rating": 350,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 3,
+          "time": 1571067999,
+          "author": "Anonimas",
+          "question": "Vilnius lietuvių literatūroje",
+          "rating": 1,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 4,
+          "time": 1571064063,
+          "author": "Anonimas",
+          "question": "Ką gali pakeisti vienas žmogus?",
+          "rating": 24,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 5,
+          "time": 1571067963,
+          "author": "NEC",
+          "question": "Svarbiau mylėti ar būti mylimam?",
+          "rating": 12,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 6,
+          "time": 1571067900,
+          "author": "Antanas",
+          "question": "Gyvybės vertė literatūroje",
+          "rating": 350,
+          "isAnswered": false,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        },
+        {
+          "id": 7,
+          "time": 1571067999,
+          "author": "Anonimas",
+          "question": "Susvetimėjimo problema literatūroje",
+          "rating": 1,
+          "isAnswered": true,
+          "isRemoved": false,
+          "isApproved": false,
+          "isLiked": false
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "nickname": "geras",
+      "password": "gerulis"
+    }
+  ]
+}

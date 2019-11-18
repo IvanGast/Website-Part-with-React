@@ -1,0 +1,110 @@
+pod_label = "docker-${UUID.randomUUID().toString()}"
+acrUrl = "sourcery2019fall.azurecr.io"
+fe_img = "blackend/blackend-fe"
+ms_img = "blackend/blackend-ms"
+namespace = "blackend"
+
+pipeline {
+  agent {
+    kubernetes {
+      label "${pod_label}"
+      yamlFile "jenkins/jenkins-slave.yml"
+    }
+  }
+
+  options {
+    durabilityHint("PERFORMANCE_OPTIMIZED")
+    disableConcurrentBuilds()
+    buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+  }
+
+  environment {
+    IMAGE_TAG = sh(returnStdout: true, script: 'printf ${GIT_COMMIT:=missing}')
+  }
+
+  stages {
+    stage("Build Images") {
+      parallel {
+        stage("front-end") {
+          steps {
+            container("docker") {
+              dir("frontend") {
+                sh("set +x; docker login --username \$DOCKER_USERNAME --password \$DOCKER_PASSWORD ${acrUrl}; set -x")
+                sh("docker pull ${acrUrl}/${fe_img}:latest || true")
+                sh """
+                  docker build \
+                  --cache-from ${acrUrl}/${fe_img}:latest \
+                  -t ${acrUrl}/${fe_img}:latest \
+                  -f "./Dockerfile" \
+                  "."
+                """
+              }
+            }
+          }
+        }
+
+        stage("mocked-server") {
+          steps {
+            container("docker") {
+              dir("mock-server") {
+                sh("set +x; docker login --username \$DOCKER_USERNAME --password \$DOCKER_PASSWORD ${acrUrl}; set -x")
+                sh("docker pull ${acrUrl}/${ms_img}:latest || true")
+                sh """
+                  docker build \
+                  --cache-from ${acrUrl}/${ms_img}:latest \
+                  -t ${acrUrl}/${ms_img}:latest \
+                  -f "./Dockerfile" \
+                  "."
+                """
+              }
+            }
+          }
+        }
+      }
+    }
+
+    stage("Deploy to ACR") {
+      when {
+        branch "develop"
+      }
+
+      steps {
+        container("docker") {
+          sh("set +x; docker login --username \$DOCKER_USERNAME --password \$DOCKER_PASSWORD ${acrUrl}; set -x")
+          sh("docker tag ${acrUrl}/${fe_img}:latest ${acrUrl}/${fe_img}:${env.IMAGE_TAG}")
+          sh("docker tag ${acrUrl}/${ms_img}:latest ${acrUrl}/${ms_img}:${env.IMAGE_TAG}")
+          sh("docker push ${acrUrl}/${fe_img}:latest")
+          sh("docker push ${acrUrl}/${fe_img}:${env.IMAGE_TAG}")
+          sh("docker push ${acrUrl}/${ms_img}:latest")
+          sh("docker push ${acrUrl}/${ms_img}:${env.IMAGE_TAG}")
+        }
+      }
+    }
+
+    stage("Deploy to Kubernetes") {
+      when {
+        branch "develop"
+      }
+
+      parallel {
+        stage("front-end") {
+          steps {
+            container("kubectl") {
+              // sh("helm lint ./helm/${namespace} -f ./helm/values.fe.yaml")
+              sh("helm upgrade --install --force ${namespace}-fe ./helm/${namespace} -f ./helm/values.fe.yaml --namespace ${namespace}")
+            }
+          }
+        }
+
+        stage("mocked-server") {
+          steps {
+            container("kubectl") {
+              // sh("helm lint ./helm/${namespace} -f ./helm/values.ms.yaml")
+              sh("helm upgrade --install --force ${namespace}-ms ./helm/${namespace} -f ./helm/values.ms.yaml --namespace ${namespace}")
+            }
+          }
+        }
+      }
+    }
+  }
+}

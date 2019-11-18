@@ -1,0 +1,42 @@
+# Common
+nameOverride: blackend-fe
+
+# Container
+container:
+  image: sourcery2019fall.azurecr.io/blackend/blackend-fe
+  imagePullSecrets: acr-auth
+  imageTag: latest
+  pullPolicy: Always
+  restartPolicy: Always
+  replicaCount: 1
+  ports:
+    - containerPort: 80
+      name: http
+      protocol: TCP
+  resources:
+    limits:
+      cpu: "100m"
+      memory: "512Mi"
+    requests:
+      cpu: "50m"
+      memory: "128Mi"
+
+# Kubernetes Service & Ingress
+service:
+  enabled: true
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: traefik
+      traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+      traefik.ingress.kubernetes.io/redirect-entry-point: https
+      traefik.ingress.kubernetes.io/redirect-permanent: "true"
+    hostname: blackend.devbstaging.com
+    paths:
+      - /

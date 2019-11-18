@@ -1,0 +1,40 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      release: {{ .Release.Name }}
+      app: {{ template "name" . }}
+  replicas: {{ .Values.container.replicaCount }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 99%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+        chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+        heritage: {{ .Release.Service }}
+        release: {{ .Release.Name }}
+        release-time: "{{ date "20060102150405" .Release.Time }}"
+    spec:
+      containers:
+        - name: {{ template "name" . }}
+          image: {{ .Values.container.image }}:{{ .Values.container.imageTag }}
+          imagePullPolicy: {{ .Values.container.pullPolicy }}
+          ports:
+{{ toYaml .Values.container.ports | indent 12 }}
+          resources:
+{{ toYaml .Values.container.resources | indent 12 }}
+      restartPolicy: {{ .Values.container.restartPolicy }}
+      # imagePullSecrets:
+      #   - name: {{ .Values.container.imagePullSecrets }}

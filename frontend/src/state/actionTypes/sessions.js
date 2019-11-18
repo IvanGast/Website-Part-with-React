@@ -1,0 +1,14 @@
+export const GET_SESSIONS = 'sessions/GET_SESSIONS';
+export const SESSIONS_RECEIVED = 'sessions/SESSIONS_RECEIVED';
+export const SESSIONS_FAILED = 'sessions/SESSIONS_FAILED';
+export const ADD_SESSION = 'sessions/ADD_SESSION';
+export const SESSION_CREATE_FAILED = 'sessions/SESSION_CREATE_FAILED';
+export const SESSION_CREATE_SUCCESS = 'sessions/SESSION_CREATE_SUCCESS';
+export const FIND_SESSION = 'sessions/FIND_SESSION';
+export const FIND_SESSION_FAILED = 'sessions/FIND_SESSION_FAILED';
+export const FIND_SESSION_SUCCESS = 'sessions/FIND_SESSION_SUCCESS';
+export const REMOVE_CREATE_STATUS = 'sessions/REMOVE_CREATE_STATUS';
+export const SESSION_CLOSE = 'sessions/SESSION_CLOSE';
+export const SESSION_CLOSE_SUCCESS = 'sessions/SESSION_CLOSE_SUCCESS';
+export const LOCK_SESSION = 'sessions/LOCK_SESSION';
+export const LOCK_SESSION_SUCCESS = 'sessions/LOCK_SESSION_SUCCESS';

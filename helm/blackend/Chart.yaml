@@ -1,0 +1,9 @@
+apiVersion: v1
+name: blackend
+version: 0.1.0
+description: Devbridge Sourcery blackend team
+sources:
+- https://bitbucket.org/devbridge-sourcery/sfd-s19f-justas-team/src/develop/
+maintainers:
+- name: Justas Eimutis
+  email: justas.eimutis@devbridge.com

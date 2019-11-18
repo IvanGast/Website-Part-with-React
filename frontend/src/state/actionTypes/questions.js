@@ -1,0 +1,15 @@
+export const GET_QUESTIONS = 'questions/GET_QUESTIONS';
+export const GET_QUESTIONS_SUCCESS = 'questions/GET_QUESTIONS_SUCCESS';
+export const GET_QUESTIONS_FAILED = 'questions/GET_QUESTIONS_FAILED';
+export const ADD_QUESTION = 'questions/ADD_QUESTION';
+export const ADD_QUESTION_SUCCESS = 'questions/ADD_QUESTION_SUCCESS';
+export const ADD_QUESTION_FAILED = 'questions/ADD_QUESTION_FAILED';
+export const CHANGE_ANSWERED = 'questions/CHANGE_ANSWERED';
+export const CHANGE_ANSWERED_SUCCESS = 'questions/CHANGE_ANSWERED_SUCCESS';
+export const DELETE_QUESTION = 'questions/DELETE_QUESTION';
+export const DELETE_QUESTION_SUCCESS = 'questions/DELETE_QUESTION_SUCCESS';
+export const APPROVE_QUESTION = 'questions/APPROVE_QUESTION';
+export const APPROVE_QUESTION_SUCCESS = 'questions/APPROVE_QUESTION_SUCCESS';
+export const CHANGE_LIKE = 'questions/CHANGE_LIKE';
+export const CHANGE_LIKE_SUCCESS = 'questions/CHANGE_LIKE_SUCCESS';
+export const REMOVE_CREATE_STATUS = 'questions/REMOVE_CREATE_STATUS';
